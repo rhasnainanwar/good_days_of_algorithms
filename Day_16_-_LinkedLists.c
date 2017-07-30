@@ -119,10 +119,17 @@ node* pop(node* head){
 //deletes each node, i.e., whole Linked List
 //INPUT: head of the list to destroy
 //OUTPUT: NULL
-void destroy(node* head){
-    while(head != NULL)
-        head = pop(head);
-   head = NULL;
+void destroy(node** head){
+    node* current = *head;
+    node* next;
+
+    while (current != NULL){
+       next = current->next;
+       free(current);
+       current = next;
+    }
+
+    *head = NULL;
 }
 
 //prints the data in linked list. Name taken from Object class in Java

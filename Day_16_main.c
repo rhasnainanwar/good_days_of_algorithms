@@ -43,7 +43,7 @@ int main(){
         printf("NOT FOUND\n");
 
     printf("\nDestroying...\n");
-    destroy(head);
+    destroy(&head);
     printf("Linked List: "); toString(head);
     return 0;
 }
